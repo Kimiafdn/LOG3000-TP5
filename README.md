@@ -6,7 +6,7 @@ Launch the terminal in the OpenShift Console sandbox. It will use the default pr
 
 ## Blue app from master
 
-    oc new-app https://github.com/{username}/blue-green-openshift#master --name=blue --strategy=source
+    oc new-app https://github.com/Kimiafdn/LOG3000-TP5#master --name=blue --strategy=source
 
 ## Expose bluegreen service (using blue)
 
@@ -14,7 +14,7 @@ Launch the terminal in the OpenShift Console sandbox. It will use the default pr
 
 ## Green app deploy
 
-    oc new-app https://github.com/{username}/blue-green-openshift#green --name=green
+    oc new-app https://github.com/Kimiafdn/LOG3000-TP5#green --name=green
 
 ## Switch services to green
 
@@ -30,3 +30,9 @@ Breakdown of the above command:
 ## Switch services back to blue
 
     oc get route/bluegreen -o yaml | sed -e 's/name: green$/name: blue/' | oc replace -f -
+
+## Get URL 
+
+    oc get route bluegreen 
+
+
